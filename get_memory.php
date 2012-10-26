@@ -7,9 +7,11 @@ $total_memory = file_get_contents("./memory.cache");
 $im = imagecreatefrompng($png_image);
 $textcolor = imagecolorallocate($im, 255, 255, 255);
 
-imagestring($im, 5, 130, 12, "Total Amount Of Ram Online", $textcolor);
-imagestring($im, 5, 200, 32, $total_memory . " MB", $textcolor);
+imagettftext($im, 18, 0, 110, 27, $textcolor, $font_path, "Total Amount Of Ram Online");
+imagettftext($im, 18, 0, 200, 52, $textcolor, $font_path, $total_memory . " MB");
 
 header("Content-type: image/png");
+
 imagepng($im);
+imagedestroy($im);
 ?>
