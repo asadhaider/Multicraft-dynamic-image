@@ -2,8 +2,6 @@
 require('classes/MulticraftAPI.php');
 require('config/servers.php');
 
-header("Content-type: text/plain");
-
 $total_memory = 0;
 
 foreach( $servers as $server ) {
