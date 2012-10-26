@@ -19,5 +19,8 @@ foreach( $servers as $server ) {
 	}
 }
 
-print("Total Memory Used: " . $total_memory);
+$cache_file = "./memory.cache";
+$fh = fopen($cache_file, 'w');
+fwrite($fh, $total_memory);
+fclose($fh);
 ?>
