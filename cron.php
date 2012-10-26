@@ -21,6 +21,10 @@ foreach( $servers as $server ) {
 
 $cache_file = "./memory.cache";
 $fh = fopen($cache_file, 'w');
-fwrite($fh, $total_memory);
+
+if( is_int($total_memory) ) {
+	fwrite($fh, $total_memory);
+}
+
 fclose($fh);
 ?>
